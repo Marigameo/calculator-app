@@ -1,7 +1,10 @@
 .history-list {
     list-style-type: none;
 }
-
+.history-container {
+    display: flex;
+    justify-content: space-between;
+}
 .history-wrapper {
     width: 75%;
     height: 500px;

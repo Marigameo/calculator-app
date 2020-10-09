@@ -6,16 +6,21 @@ class History extends Component {
         const { history, clearHistory, historyButtonState } = this.props
         if (history != null) {
             return (
-                <div className="history-wrapper">
-                    <div className="history-heading">Clear History Entries</div>
-                    <ul className="history-list">
-                        {
-                            history.map((el, index) => <li className="list-item" key={index}><div className="equation-item">{el.equation}</div><div className="output-item"> = {el.output}</div></li>)
-                        }
-                    </ul>
-                    <ClearHistoryButton clearHistory={clearHistory} historyButtonState={historyButtonState} />
-                </div>
+                <div>
+                    <div className="history-container">
+                        <div className="history-heading">Clear History Entries
+                    </div>
 
+                        <ClearHistoryButton clearHistory={clearHistory} historyButtonState={historyButtonState} />
+                    </div>
+                    <div className="history-wrapper">
+                        <ul className="history-list">
+                            {
+                                history.map((el, index) => <li className="list-item" key={index}><div className="equation-item">{el.equation}</div><div className="output-item"> = {el.output}</div></li>)
+                            }
+                        </ul>
+                    </div>
+                </div>
             )
         } else {
             return (
