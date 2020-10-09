@@ -61,6 +61,7 @@ class Calculator extends React.Component {
             }]
             localStorage.setItem('history', JSON.stringify(history))
             this.setState({
+                equation: '', output: 0,
                 history: history,
                 historyButtonState: true
             })
