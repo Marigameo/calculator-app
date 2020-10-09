@@ -4,7 +4,6 @@ import ClearHistoryButton from './ClearHistoryButton'
 class History extends Component {
     render() {
         const { history, clearHistory, historyButtonState } = this.props
-        console.log(history);
         if (history != null && history !== '' && Array.isArray(history) && history.length > 0) {
             return (
                 <div>

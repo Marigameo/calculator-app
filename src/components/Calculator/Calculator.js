@@ -25,8 +25,14 @@ class Calculator extends React.Component {
         let equation = this.state.equation;
         const pressedButton = event.target.innerHTML;
         if (pressedButton === 'C') return this.clear();
-        else if ((pressedButton >= '0' && pressedButton <= '9') || pressedButton === '.') equation += pressedButton;
-        else if (['+', '-', '*', '/', '%'].indexOf(pressedButton) !== -1) equation += ' ' + pressedButton + ' ';
+        else if ((pressedButton >= '0' && pressedButton <= '9') || pressedButton === '.') {
+            equation += pressedButton;
+            this.setState({ equation: equation });
+        }
+        else if (['+', '-', '*', '/', '%'].indexOf(pressedButton) !== -1) {
+            equation += ' ' + pressedButton + ' ';
+            this.setState({ equation: equation });
+        }
         else if (pressedButton === '=') {
             try {
                 /*  I've used eval to evaluate the string expression.
@@ -43,16 +49,17 @@ class Calculator extends React.Component {
                 const evalResult = eval(equation);
                 const output = Number.isInteger(evalResult) ? evalResult : evalResult.toFixed(2);
                 this.setState({ output });
+                this.setState({ equation: equation });
             } catch (error) {
+                this.setState({ equation: '' });
                 alert('Invalid Mathematical Equation');
             }
         }
         else {
             equation = equation.trim();
             equation = equation.substr(0, equation.length - 1);
+            this.setState({ equation: equation });
         }
-
-        this.setState({ equation: equation });
     }
 
     clearHistory = () => {
@@ -63,7 +70,6 @@ class Calculator extends React.Component {
     clear() {
         //check if it's already there in localStorage
         let history = localStorage.getItem('history');
-        console.log(history);
         if (history === null || history === '') {
             history = [{
                 equation: this.state.equation,
