@@ -53,3 +53,10 @@
     margin: 20px;
     font-weight: 800;
 }
+
+.warning {
+    font-size: 20px;
+    background-color: var(--color-primary-transparent);
+    color: var(--color-secondary);
+    padding: 20px;
+}

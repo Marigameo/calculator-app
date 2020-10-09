@@ -4,7 +4,8 @@ import ClearHistoryButton from './ClearHistoryButton'
 class History extends Component {
     render() {
         const { history, clearHistory, historyButtonState } = this.props
-        if (history != null) {
+        console.log(history);
+        if (history != null && history !== '' && Array.isArray(history) && history.length > 0) {
             return (
                 <div>
                     <div className="history-container">
@@ -24,7 +25,7 @@ class History extends Component {
             )
         } else {
             return (
-                <div>No clear history added yet</div>
+                <div className="warning">Clear history empty</div>
             )
         }
     }
