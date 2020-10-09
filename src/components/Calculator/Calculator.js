@@ -29,6 +29,16 @@ class Calculator extends React.Component {
         else if (['+', '-', '*', '/', '%'].indexOf(pressedButton) !== -1) equation += ' ' + pressedButton + ' ';
         else if (pressedButton === '=') {
             try {
+                /*  I've used eval to evaluate the string expression.
+                    Eval is quite vulnerable, since one could send anything via strings, but in our case we are not allowing the keyboard events,
+                    Just we are getting the equation via mouse click event, thus I've used it here. 
+
+                    More secured, robust implementation can use something like MathJS library or something similar to it
+
+                    For simplicity in case of this task, eval is used
+
+                */
+
                 // eslint-disable-next-line
                 const evalResult = eval(equation);
                 const output = Number.isInteger(evalResult) ? evalResult : evalResult.toFixed(2);
