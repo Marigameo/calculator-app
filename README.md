@@ -2,7 +2,7 @@
 
 This is a simple task of creating a modular calculator app using react and localStorage for clear history tracking
 
-You can find the working demo on [here](https://calculator-app.netlify.app/)
+You can find the working demo on [here](https://calci-app.netlify.app/)
 
 ## Tech Stack
 
@@ -33,3 +33,5 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ### Email - mariappangameo@gmail.com
 
 To know more about me [Portfolio](http://mariappan.netlify.com/)
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/64178189-ede2-475c-a49a-cfc1e6da6346/deploy-status)](https://app.netlify.com/sites/calci-app/deploys)
