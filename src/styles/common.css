@@ -1,0 +1,80 @@
+/* CSS Reset - Basic cleaning for the app*/
+
+/* removing any extra padding/margin*/
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    font-family: inherit;
+}
+
+/* Variables - configured for common usage all over the app*/
+:root {
+    --color-white: #fff;
+    --color-light-white: #eee;
+    --color-primary-transparent: rgba(234, 240, 241, .5);
+    --color-primary: #EAF0F1;
+    --color-secondary: #eb4d4b;
+    --color-blue: #3498DB;
+    --color-shade: #0ABDE3;
+    --color-black: #000;
+    --color-gray: #8395a7;
+    --shadow: rgba(0, 0, 0, .4);
+}
+
+/* styling the root component */
+
+.wrapper {
+  width: 100%;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculator {
+  height: 80vh;
+  width: 75%;
+  box-shadow: 0 2rem 4rem var(--shadow);
+  background-color: var(--color-white);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 1200px;
+    margin-bottom: 40px;
+}
+
+.column {
+    padding: 20px;
+    width: 50%;
+}
+
+.title {
+    font-size: 20px;
+    margin: 20px;
+    font-weight: 800;
+}
+
+@media only screen and (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+  .column {
+      width: 100%;
+  }
+  .calculator {
+      width: auto;
+  }
+}

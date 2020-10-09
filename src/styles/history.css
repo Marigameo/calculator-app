@@ -1,0 +1,52 @@
+.history-list {
+    list-style-type: none;
+}
+
+.history-wrapper {
+    width: 75%;
+    height: 500px;
+    overflow: scroll;
+}
+
+.list-item {
+    border-bottom: .2px solid var(--color-primary-transparent);
+    padding: 10px;
+    margin: 10px;
+}
+
+.list-item:hover {
+    background-color: var(--color-primary-transparent)
+}
+
+.equation-item {
+    font-size: 12px;
+    color: var(--color-gray);
+}
+
+.output-item {
+    font-size: 18px;
+    color: var(--color-blue);
+}
+
+.history-button {
+    padding: 10px;
+    border: 0.5px solid var(--color-secondary);
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--color-secondary);
+    background-color: var(--color-primary-transparent);
+    margin-top: 20px;
+    float: right;
+}
+
+.history-button:hover {
+    color: var(--color-white);
+    background-color: var(--color-secondary);
+}
+
+.history-heading {
+    font-size: 20px;
+    margin: 20px;
+    font-weight: 800;
+}
