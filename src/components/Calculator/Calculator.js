@@ -46,13 +46,16 @@ class Calculator extends React.Component {
                 */
 
                 // eslint-disable-next-line
-                const evalResult = eval(equation);
+                const evalResult = Function('"use strict";return (' + equation + ')')();
+                //an alternative to eval - as suggested in mdn docs - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval
+
+                // const evalResult = eval(equation);
                 const output = Number.isInteger(evalResult) ? evalResult : evalResult.toFixed(2);
                 this.setState({ output });
                 this.setState({ equation: equation });
             } catch (error) {
                 this.setState({ equation: '' });
-                alert('Invalid Mathematical Equation');
+                alert('Invalid Mathematical Expression');
             }
         }
         else {
